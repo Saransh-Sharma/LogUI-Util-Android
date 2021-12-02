@@ -37,3 +37,17 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'saransh1337.jitpack'
+                artifactId = 'logUtil-example'
+                version = '1.0'
+            }
+        }
+    }
+}
